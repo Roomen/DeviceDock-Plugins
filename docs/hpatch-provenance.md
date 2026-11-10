@@ -1,0 +1,15 @@
+# HPatchLite provider
+
+The user selected HPatchLite **v0.4.3**. Engine upgrades require an explicit compatibility decision. This provider rebuilds that old engine, not current HPatchLite.
+
+Pinned upstream: https://github.com/sisong/HPatchLite at `86ad1420403a216e2a4c4c2ca6385b2b8e6f0edb` (annotated tag v0.4.3). HDiffPatch `a970d3655fe86cae03ea1d05e9258132e31d54f7`, tinyuz `46284e506104ae186eec323eff08e281816a1ab0`. Runtime uses only tinyuz (1024-byte dictionary, literal lines enabled), with match score 6, one thread, no big match cache. No zlib/LZMA codec is linked into the rebuilt provider.
+
+`tools/patch/wrapper.cpp`, `tools/patch/worker-runtime.js` and `tools/patch/build.sh` record the complete wrapper and build recipe. Supply a clean recursive checkout of the pinned source and Emscripten 6.0.13 (local version string `6.0.13-git`); run `tools/patch/build.sh /path/to/checkout`. The build verifies engine/dependency revisions, compiles source, and concatenates glue and the bounded worker. It does not run downloaded executables. WASM is limited to 256 MiB linear memory; input files to 4,000,000 bytes each and output to 8,000,000 bytes. The provider terminates each job's worker on success, failure, timeout or cancellation. Blob URLs and host-wide cleanup belong to `host.assets.createWorker`; the SDK must support verified asset reads and self-contained workers.
+
+The original application's public WASM is an optional compatibility fixture. The distributed provider is rebuilt from the pinned public source; identity with an earlier binary is not claimed. Synthetic fixtures contain no device captures or private firmware.
+
+HPatchLite and tinyuz MIT texts, complete HDiffPatch LICENSE (including libdivsufsort), and Emscripten, libc++, libc++abi, compiler-rt and musl notices accompany the provider under `patch/licenses`. Historical zlib and LZMA notices are retained for reference to the legacy asset; those codecs are absent from the new build. Engine source locations and the complete local Emscripten license text identify applicable authors. DeviceDock additions remain covered by the repository Apache-2.0 license; wrapper is MIT as marked.
+
+Format: `hI`, version 1 in the high two bits of byte 3; compression type at byte 2 may be 0 (uncompressed) or 1 (tinyuz). A valid compressed-package payload can use type 0 when compression is unhelpful. Do not require every generated patch to use tinyuz.
+
+Validation: `tools/test-browser.mjs` loads actual packaged assets through the sibling host's asset verifier, runs real Chromium Blob workers, and optionally applies every generated patch with an independently compiled pinned native `hpatchi`. Fixtures cover identical data, sparse changes, insertion/deletion, seeded incompressible data, tiny data and BLANK→firmware. Set `DEVICEDOCK_TEST_HOST` and `DEVICEDOCK_TEST_HPATCHI`. Node service tests cover the automatic diff/rejection-ACK/compressed retry pipeline and cancellation ownership. Hardware decoding/flashing and native WebKit are separate host/hardware smoke tests; no successful device flash is claimed.

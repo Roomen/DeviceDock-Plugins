@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "namespace": "plugin",
+  "repository": "https://github.com/Roomen/DeviceDock-Plugins",
+  "packages": [
+    {
+      "id": "org.devicedock.power",
+      "version": "1.0.0",
+      "apiVersion": 1,
+      "kind": "plugin",
+      "platforms": [
+        "web",
+        "desktop"
+      ],
+      "artifact": "org.devicedock.power-1.0.0.json",
+      "integrity": "sha256-308f28fe25e2686e1d2bbb78e12045c43d24ae199ab0a30bcde91329e807acb4",
+      "sha256": "308f28fe25e2686e1d2bbb78e12045c43d24ae199ab0a30bcde91329e807acb4",
+      "url": "https://github.com/Roomen/DeviceDock-Plugins/releases/download/v1.0.0/org.devicedock.power-1.0.0.json",
+      "manifest": {
+        "schemaVersion": 1,
+        "id": "org.devicedock.power",
+        "name": "Power instrument and analysis",
+        "version": "1.0.0",
+        "apiVersion": 1,
+        "kind": "plugin",
+        "entry": "power/index.js",
+        "platforms": [
+          "web",
+          "desktop"
+        ],
+        "capabilities": [],
+        "integrity": {
+          "power/analysis.js": "sha256-79fa84462b5e93e83be9b11d3bd93159bef0d4088f3a07d9eeb82fe2d0673b7b",
+          "power/archive.js": "sha256-47c22c427b7c24249ccb48d1f32cce38b2a3452898ab45fb5181c41015fd65f8",
+          "power/capture-analysis.js": "sha256-5cb318df00ac5d16547fb41651976e3579e413630c594cc01ab4854507bc103a",
+          "power/codec.js": "sha256-34573e790c8702e1ad7b3cdbac116efe34979c6180e37453f3eadc8e8659dc02",
+          "power/csv.js": "sha256-dfbc993a9788bfdfd6afdbce774cd178f88b7699b8f68648928dc3a53ec4742a",
+          "power/index.js": "sha256-e7f1d63702b0bcb73612b0920434e16610b88669565c432362c48b1dc519dde1",
+          "power/mcp.js": "sha256-2782cdf4b7a98573ab596693d0817226aac28146e2f3896184e1a1024d94c1f3",
+          "power/serial-events.js": "sha256-6b36ef91fa1620ae41edf99275a8a6c69130e13b0e03fab76cf5f2aa45519698",
+          "power/service.js": "sha256-b597ea25ba3e4f10111975c92c72716110ab352e72025416ff2a8d2b21dc2f95",
+          "power/statistics.js": "sha256-9daa76984e5c13bf51a0ddee729112f393d28ad64f1f6617621bdf3a3d0c14b8",
+          "power/stream.js": "sha256-5f609df56d3dd88b1f35a55dcc05e198a7c820d563ad747be972725778135e07",
+          "power/trigger.js": "sha256-5b66c410f7931dc35e6844d695355e2e6e6b6ad2ec37fdb06f5db99132486842",
+          "shared/charts.js": "sha256-fc61ce4087bf51c6a47af8803c08db0892b1a2cdd507bc06484bd41b9e407351",
+          "shared/ui.js": "sha256-0e339706f000c494c657de6a1290a64c60f9e6b6a44e4f1a216b9672480ae3fa"
+        },
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "org.devicedock.firmware",
+      "version": "1.0.0",
+      "apiVersion": 1,
+      "kind": "firmware",
+      "platforms": [
+        "web",
+        "desktop",
+        "mobile"
+      ],
+      "artifact": "org.devicedock.firmware-1.0.0.json",
+      "integrity": "sha256-e630e9fa31592347bc5044d630cbe9cbd7cab6bf418d137aa350a2f68c07d7ba",
+      "sha256": "e630e9fa31592347bc5044d630cbe9cbd7cab6bf418d137aa350a2f68c07d7ba",
+      "url": "https://github.com/Roomen/DeviceDock-Plugins/releases/download/v1.0.0/org.devicedock.firmware-1.0.0.json",
+      "manifest": {
+        "schemaVersion": 1,
+        "id": "org.devicedock.firmware",
+        "name": "Device firmware and packaging",
+        "version": "1.0.0",
+        "apiVersion": 1,
+        "kind": "firmware",
+        "entry": "firmware/index.js",
+        "platforms": [
+          "web",
+          "desktop",
+          "mobile"
+        ],
+        "capabilities": [],
+        "integrity": {
+          "firmware/core.js": "sha256-7554478e9280523edee94d71d2605ef82005d84bef08e05e8fa816929d8c2325",
+          "firmware/index.js": "sha256-5381fabfe3739710678142bd97032645434dbd2cb992fac4673219ce51175eca",
+          "firmware/library.js": "sha256-d6f1f088173b82dc59725a576cb33db17a67b27346006a9846f4a716cdb39aed",
+          "firmware/mcp.js": "sha256-3a2ead2ba1116bddf43c40561393b69714d2f5551f2cc596c22888c8e1738833",
+          "firmware/service.js": "sha256-34e38e03c7008a14aafd1786ba7ac313b5eae4fe555a0fde9a75adfb29a6c5ea",
+          "shared/ui.js": "sha256-0e339706f000c494c657de6a1290a64c60f9e6b6a44e4f1a216b9672480ae3fa"
+        },
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "org.devicedock.patch",
+      "version": "1.0.0",
+      "apiVersion": 1,
+      "kind": "firmware",
+      "platforms": [
+        "web",
+        "desktop",
+        "mobile"
+      ],
+      "artifact": "org.devicedock.patch-1.0.0.json",
+      "integrity": "sha256-615b0c8bc600ad5371d7fc496b43e19dbc4809fd7d03e31966c3330e68b10292",
+      "sha256": "615b0c8bc600ad5371d7fc496b43e19dbc4809fd7d03e31966c3330e68b10292",
+      "url": "https://github.com/Roomen/DeviceDock-Plugins/releases/download/v1.0.0/org.devicedock.patch-1.0.0.json",
+      "manifest": {
+        "schemaVersion": 1,
+        "id": "org.devicedock.patch",
+        "name": "HPatchLite v0.4.3 patch provider",
+        "version": "1.0.0",
+        "apiVersion": 1,
+        "kind": "firmware",
+        "entry": "patch/index.js",
+        "platforms": [
+          "web",
+          "desktop",
+          "mobile"
+        ],
+        "capabilities": [],
+        "integrity": {
+          "patch/PROVENANCE.md": "sha256-8f5518223a48b1e10bf03a217cdaf7de4f89edb06bde6a289a1f6b2c7971f334",
+          "patch/hdiffi.wasm": "sha256-dd1da406827d09b4dabce5ae1023356bb51a0f100c426069d1192b943ec55b62",
+          "patch/index.js": "sha256-e65fa44f3c6cf48c7278d17067243eabe934e5fd48b8a3a2add81ff0258f7b5c",
+          "patch/licenses/Emscripten-AUTHORS.txt": "sha256-b865d6074c7f13366cad82990ba58bbe0a3f3eccf5fa47e50aa02693de4e895e",
+          "patch/licenses/Emscripten.txt": "sha256-2fd38dc06e484cdd7a3f1e2f6577f5d53062052a2fd85131b56b89fbd673731c",
+          "patch/licenses/HDiffPatch.txt": "sha256-18dee5fae8398d7d863359a332d0b1bc08fc0405c094ac1233926a9053f883f3",
+          "patch/licenses/HPatchLite.txt": "sha256-da41812a84be667cf597a346857d6eb1ff7f6dbde4386fbab70f074ebe91fe3c",
+          "patch/licenses/compiler-rt.txt": "sha256-1a8f1058753f1ba890de984e48f0242a3a5c29a6a8f2ed9fd813f36985387e8d",
+          "patch/licenses/libcxx.txt": "sha256-539dd7aed86e8a4f12cbdd0e6c50c189c7d74847e4fecc64ce2c6ee3a01da38b",
+          "patch/licenses/libcxxabi.txt": "sha256-e2b35be49f7284a45b7baca8fc7b3ab7440e7902392b2528a457816b5bb2a15c",
+          "patch/licenses/lzma.txt": "sha256-4de9156553b0289c6c4d3a719a2485dc4917489a6b7698589452c8c487dd0695",
+          "patch/licenses/musl.txt": "sha256-b870108ec5e7790e9f9919064f1b9421d62d5f9b0e6c230c6adf7ea2da62e97b",
+          "patch/licenses/tinyuz.txt": "sha256-c1a85fe807916e13614a8cf3fbb0f2ad27d0df2d4613a5493d5e4439150c75cb",
+          "patch/licenses/zlib.txt": "sha256-5b305a8fcbfac28f3238dfe6db82016dbc72b986be3034e843648f89ffc2bfb5",
+          "patch/service.js": "sha256-30b2b3bba57fd69fe1e2fef090e0896af6085316e67873249361a5b61e595d8b",
+          "patch/worker.js": "sha256-2e800b20b73d62d9a325b6999767778293e2bb0eaa426f9f3574601cf909d9e9",
+          "shared/ui.js": "sha256-0e339706f000c494c657de6a1290a64c60f9e6b6a44e4f1a216b9672480ae3fa"
+        },
+        "license": "SEE LICENSE IN patch/licenses"
+      }
+    },
+    {
+      "id": "org.devicedock.wireless",
+      "version": "1.0.0",
+      "apiVersion": 1,
+      "kind": "transport",
+      "platforms": [
+        "web",
+        "desktop",
+        "mobile"
+      ],
+      "artifact": "org.devicedock.wireless-1.0.0.json",
+      "integrity": "sha256-cee507e1dad3cd8389a20a9cfa151c1cdfc4a0d65c92bdc3af6fbac3dcfb9924",
+      "sha256": "cee507e1dad3cd8389a20a9cfa151c1cdfc4a0d65c92bdc3af6fbac3dcfb9924",
+      "url": "https://github.com/Roomen/DeviceDock-Plugins/releases/download/v1.0.0/org.devicedock.wireless-1.0.0.json",
+      "manifest": {
+        "schemaVersion": 1,
+        "id": "org.devicedock.wireless",
+        "name": "Bluetooth LE / optional native SPP",
+        "version": "1.0.0",
+        "apiVersion": 1,
+        "kind": "transport",
+        "entry": "wireless/index.js",
+        "platforms": [
+          "web",
+          "desktop",
+          "mobile"
+        ],
+        "capabilities": [],
+        "integrity": {
+          "shared/stream-port.js": "sha256-4c98b78fc92a7099db06015d6a87adabfd5fea8da211f9629c50a8e45389dd9a",
+          "shared/ui.js": "sha256-0e339706f000c494c657de6a1290a64c60f9e6b6a44e4f1a216b9672480ae3fa",
+          "wireless/ble.js": "sha256-9dc240b50ac9dbe2763bd1574307603e0112a1f9940676d460f562d1583496ee",
+          "wireless/index.js": "sha256-cf8019384f1328002fd1267e8b804466b09a3d7fce1932d2c7d67d04c7f98961"
+        },
+        "license": "Apache-2.0"
+      }
+    },
+    {
+      "id": "org.devicedock.bridge",
+      "version": "1.0.0",
+      "apiVersion": 1,
+      "kind": "plugin",
+      "platforms": [
+        "web",
+        "desktop"
+      ],
+      "artifact": "org.devicedock.bridge-1.0.0.json",
+      "integrity": "sha256-6e19a8f19d318a63ac511657543d5689256a2055515881f59f5efac51d97fc69",
+      "sha256": "6e19a8f19d318a63ac511657543d5689256a2055515881f59f5efac51d97fc69",
+      "url": "https://github.com/Roomen/DeviceDock-Plugins/releases/download/v1.0.0/org.devicedock.bridge-1.0.0.json",
+      "manifest": {
+        "schemaVersion": 1,
+        "id": "org.devicedock.bridge",
+        "name": "USB BLE bridge and GATT tools",
+        "version": "1.0.0",
+        "apiVersion": 1,
+        "kind": "plugin",
+        "entry": "bridge/index.js",
+        "platforms": [
+          "web",
+          "desktop"
+        ],
+        "capabilities": [],
+        "integrity": {
+          "bridge/core.js": "sha256-1a5fafcf8fb5fd0b7db45bb83cc67a35a185dda07929a00bd6efa8294f0ecbb2",
+          "bridge/index.js": "sha256-4968ed294b48b1a8373b0fd2c0df31ab212045ae2ab932c45085671480a81b4e",
+          "bridge/mcp.js": "sha256-ed01810a1393e180bbde7aa5000fb692873ec1462b1273d9cd6eec779d3ad198",
+          "bridge/service.js": "sha256-c2f9ad9f886d5e3e871122a9808f65ed50f5a7f2757148ee516f30127d4e078d",
+          "shared/stream-port.js": "sha256-4c98b78fc92a7099db06015d6a87adabfd5fea8da211f9629c50a8e45389dd9a",
+          "shared/ui.js": "sha256-0e339706f000c494c657de6a1290a64c60f9e6b6a44e4f1a216b9672480ae3fa"
+        },
+        "license": "Apache-2.0"
+      }
+    }
+  ]
+}

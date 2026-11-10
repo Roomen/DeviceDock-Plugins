@@ -1,0 +1,2 @@
+LZMA SDK C sources: Igor Pavlov, public domain.
+See the pinned lzma source headers, including C/LzmaEnc.c and C/LzmaDec.c.

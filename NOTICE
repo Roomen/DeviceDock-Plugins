@@ -1,0 +1,8 @@
+DeviceDock Plugins contains modified algorithms from Roomen/web-serial-debug,
+reference revision 1d164ee85e3f01de34cff2efca81c4f97379b909, licensed Apache-2.0.
+Original LICENSE retained. BLU codec/analysis and firmware package core converted
+from script globals to isolated ESM modules; service/UI/lifecycle code is new.
+The optional patch provider uses pinned HPatchLite v0.4.3 / HDiffPatch / tinyuz
+by housisong, rebuilt from source with Emscripten 6.0.13. Full component and
+runtime notices are shipped in patch/licenses; see docs/hpatch-provenance.md.
+No credentials, device captures, private endpoints or legacy history imported.

@@ -1,0 +1,21 @@
+{
+  "name": "@devicedock/plugins",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "build": "node tools/package.mjs",
+    "verify": "node tools/verify.mjs",
+    "test:integration": "node tools/integration.mjs",
+    "test:browser": "node tools/test-browser.mjs",
+    "prepare:release": "node tools/prepare-release.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "fake-indexeddb": "^6.2.8",
+    "playwright-core": "^1.65.0"
+  }
+}
