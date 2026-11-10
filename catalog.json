@@ -46,7 +46,8 @@
           "shared/ui.js": "sha256-0e339706f000c494c657de6a1290a64c60f9e6b6a44e4f1a216b9672480ae3fa"
         },
         "license": "Apache-2.0"
-      }
+      },
+      "webUrl": "https://raw.githubusercontent.com/Roomen/DeviceDock-Plugins/220c1a2c437d647fb870812ca6a59e29a9bebeb0/web/org.devicedock.power-1.0.0-308f28fe25e2686e1d2bbb78e12045c43d24ae199ab0a30bcde91329e807acb4.json"
     },
     {
       "id": "org.devicedock.firmware",
@@ -85,7 +86,8 @@
           "shared/ui.js": "sha256-0e339706f000c494c657de6a1290a64c60f9e6b6a44e4f1a216b9672480ae3fa"
         },
         "license": "Apache-2.0"
-      }
+      },
+      "webUrl": "https://raw.githubusercontent.com/Roomen/DeviceDock-Plugins/220c1a2c437d647fb870812ca6a59e29a9bebeb0/web/org.devicedock.firmware-1.0.0-e630e9fa31592347bc5044d630cbe9cbd7cab6bf418d137aa350a2f68c07d7ba.json"
     },
     {
       "id": "org.devicedock.patch",
@@ -135,7 +137,8 @@
           "shared/ui.js": "sha256-0e339706f000c494c657de6a1290a64c60f9e6b6a44e4f1a216b9672480ae3fa"
         },
         "license": "SEE LICENSE IN patch/licenses"
-      }
+      },
+      "webUrl": "https://raw.githubusercontent.com/Roomen/DeviceDock-Plugins/220c1a2c437d647fb870812ca6a59e29a9bebeb0/web/org.devicedock.patch-1.0.0-615b0c8bc600ad5371d7fc496b43e19dbc4809fd7d03e31966c3330e68b10292.json"
     },
     {
       "id": "org.devicedock.wireless",
@@ -172,7 +175,8 @@
           "wireless/index.js": "sha256-cf8019384f1328002fd1267e8b804466b09a3d7fce1932d2c7d67d04c7f98961"
         },
         "license": "Apache-2.0"
-      }
+      },
+      "webUrl": "https://raw.githubusercontent.com/Roomen/DeviceDock-Plugins/220c1a2c437d647fb870812ca6a59e29a9bebeb0/web/org.devicedock.wireless-1.0.0-cee507e1dad3cd8389a20a9cfa151c1cdfc4a0d65c92bdc3af6fbac3dcfb9924.json"
     },
     {
       "id": "org.devicedock.bridge",
@@ -209,7 +213,8 @@
           "shared/ui.js": "sha256-0e339706f000c494c657de6a1290a64c60f9e6b6a44e4f1a216b9672480ae3fa"
         },
         "license": "Apache-2.0"
-      }
+      },
+      "webUrl": "https://raw.githubusercontent.com/Roomen/DeviceDock-Plugins/220c1a2c437d647fb870812ca6a59e29a9bebeb0/web/org.devicedock.bridge-1.0.0-6e19a8f19d318a63ac511657543d5689256a2055515881f59f5efac51d97fc69.json"
     }
   ]
 }
