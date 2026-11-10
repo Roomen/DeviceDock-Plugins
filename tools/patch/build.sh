@@ -11,7 +11,7 @@ emcc --version | head -1 | grep '6.0.13'
 mkdir -p "${EM_CACHE:-/tmp/devicedock-em-cache}"
 export EM_CACHE=$(CDPATH= cd -- "${EM_CACHE:-/tmp/devicedock-em-cache}" && pwd -P)
 make -C "$source_dir" clean
-CXXFLAGS="-fexceptions -ffile-prefix-map=$source_dir=/upstream/HPatchLite" emmake make -C "$source_dir" -j4 MT=0 ZLIB=0 LZMA=0 libhpatchlite.a
+CFLAGS="-ffile-prefix-map=$source_dir=/upstream/HPatchLite" CXXFLAGS="-fexceptions -ffile-prefix-map=$source_dir=/upstream/HPatchLite" emmake make -C "$source_dir" -j4 MT=0 ZLIB=0 LZMA=0 libhpatchlite.a
 em++ "$repo_dir/tools/patch/wrapper.cpp" "$source_dir/libhpatchlite.a" -I"$source_dir" \
  -I"$source_dir/tinyuz/compress" -I"$source_dir/tinyuz/decompress" -I"$source_dir/HDiffPatch/libHDiffPatch/HPatchLite" \
  -D_CompressPlugin_tuz -D_IS_NEED_DEFAULT_CompressPlugin=0 -D_IS_USED_SHARE_hpatch_lite_types=1 -D_IS_USED_MULTITHREAD=0 \

@@ -77,3 +77,43 @@ test('bridge MCP declares legacy commands and commits at host write; expired que
  await assert.rejects(map.get('org.devicedock.bridge.ble_scan_start').call({}, context(host, { commit: async () => { assert.equal(session.writes.length, 1); throw Error('fence expired') } })), /fence expired/)
  assert.equal(session.writes.length, 1); off(); await service.dispose()
 })
+
+test('MCP passkey commit rejection sends zero bytes and retains challenge and live bridge', async () => {
+ const host = mockHost(), map = tools(host), service = createBridgeService(host), off = registerBridgeTools(host, service)
+ const create = host.resources.createSession.bind(host.resources), encode = value => new TextEncoder().encode(JSON.stringify(value) + '\n')
+ let session, pair
+ host.resources.createSession = key => {
+  session = create(key)
+  session.onSend = bytes => {
+   const cmd = JSON.parse(new TextDecoder().decode(bytes))
+   session.emit(encode({ t: 'rsp', id: cmd.id, ok: true }))
+   if (cmd.op === 'connect') session.emit(encode({ t: 'evt', e: 'conn', state: 'connected', addr: 'synthetic' }))
+  }
+  return session
+ }
+ try {
+  await service.controller.run('open', { deviceId: service.selectPort({}) })
+  session.emit(encode({ t: 'evt', e: 'ready' }))
+  await service.controller.run('scan_start')
+  session.emit(encode({ t: 'evt', e: 'dev', items: [{ addr: 'synthetic', at: 0, name: 'fixture', conn: true }] }))
+  await service.controller.run('connect', { deviceId: service.controller.devices()[0].deviceId })
+  pair = service.controller.run('pair', { generation: service.controller.state().generation })
+  pair.catch(() => {})
+  await tick()
+  session.emit(encode({ t: 'evt', e: 'passkey', action: 'confirm', value: 123456 }))
+  const before = session.writes.length, state = service.controller.state(), challenge = state.challenge
+  assert.ok(challenge)
+  let commits = 0
+  const call = map.get('org.devicedock.bridge.ble_passkey').call
+  await assert.rejects(call({ generation: state.generation, passkey: 1 }, context(host, { commit: async () => { commits++; throw Error('passkey fence rejected') } })), /passkey fence rejected/)
+  assert.equal(commits, 1); assert.equal(session.writes.length, before)
+  assert.deepEqual(service.controller.state().challenge, challenge)
+  assert.equal(service.controller.state().generation, state.generation); assert.equal(service.controller.state().phase, 'connected')
+  assert.equal(host.resourcesMap.get('bridge'), session); assert.equal(session.state, 'open'); assert.equal(session.busy, true)
+  // The same pending challenge remains usable without reconnecting or restarting pairing.
+  await call({ generation: state.generation, passkey: 1 }, context(host))
+  assert.equal(session.writes.length, before + 1); assert.equal(service.controller.state().challenge, null)
+  session.emit(encode({ t: 'evt', e: 'sec', encrypted: true }))
+  assert.equal((await pair).paired, true)
+ } finally { off(); await service.dispose(); await pair?.catch(() => {}) }
+})
